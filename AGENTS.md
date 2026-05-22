@@ -36,6 +36,21 @@ docs/workflows/agent-work-item-workflow.md
 
 That workflow defines the GitHub repository context, the connected private project, branch preparation, and branch naming rules.
 
+## GitHub Tooling
+
+Use the configured GitHub MCP server first for GitHub repository, issue, pull request, and project data.
+
+Before using GitHub CLI (`gh`) or direct GitHub REST API calls, check whether GitHub MCP tools are available in the current session. If GitHub MCP tools are available, use them for:
+
+- reading work item, issue, and pull request details
+- reading or updating GitHub Project item fields
+- creating or updating pull requests, comments, labels, or issue state
+- reading repository metadata that is not already available locally
+
+Use local `git` commands for local repository state and source control operations such as status, diff, branch creation, commits, and push.
+
+Fall back to `gh` or direct GitHub REST API only when GitHub MCP tools are unavailable or fail. When falling back, state the reason briefly so the user can distinguish a tool limitation from an agent choice.
+
 ## Dotnet New Configuration
 
 The template configuration should live at:

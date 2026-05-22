@@ -4,6 +4,20 @@ This workflow applies to agents working on the `RapidApiTemplate` repository its
 
 The repository is hosted on GitHub as `RapidApiTemplate`. It is connected to the private project `RapidApiTemplateProject`.
 
+## GitHub Access
+
+Use the configured GitHub MCP server as the primary interface for GitHub data and actions.
+
+At the start of GitHub-related work, check whether GitHub MCP tools are available in the current session. If they are available, use them before any fallback mechanism for:
+
+- reading issue, work item, pull request, and repository metadata
+- reading or updating items in the connected `RapidApiTemplateProject`
+- creating or updating pull requests, comments, labels, or issue state
+
+Use local `git` for local repository state and source control operations, including `status`, `diff`, branch creation, commits, and push.
+
+Use GitHub CLI (`gh`) or direct GitHub REST API calls only if GitHub MCP tools are unavailable or fail. If a fallback is used, mention the reason in the user-facing update or final answer.
+
 ## Starting Work
 
 When the user provides a work item ID, use that item as the source of scope, title, and branch description.
@@ -17,10 +31,13 @@ Before changing files:
 Then prepare the branch:
 
 ```powershell
+git branch --show-current
 git switch main
 git pull
 git switch -c <branch-name>
 ```
+
+Skip `git switch main` if `git branch --show-current` already reports `main`.
 
 If the repository uses a different remote default branch in the future, confirm with the user before changing this workflow.
 
@@ -73,7 +90,7 @@ The agent should identify:
 - acceptance criteria, if present
 - whether the work is a feature, bug fix, refactor, or maintenance task
 
-If project details are not available through tools in the current session, continue from the user's description and state that limitation.
+If project details are not available through GitHub MCP in the current session, use the fallback order from the GitHub Access section. If no tool can retrieve the project details, continue from the user's description and state that limitation.
 
 ## Implementation
 
@@ -93,4 +110,3 @@ After testing a locally installed template, uninstall it:
 ```powershell
 dotnet new uninstall .\template
 ```
-
