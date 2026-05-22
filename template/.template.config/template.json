@@ -61,7 +61,8 @@
       "defaultValue": "",
       "isEnabled": "(CodeRepositoryEngine == \"Azure DevOps\")",
       "isRequired": "(CodeRepositoryEngine == \"Azure DevOps\")",
-      "replaces": "__CodeRepositoryProjectName__"
+      "replaces": "__CodeRepositoryProjectName__",
+      "fileRename": "__RequiredCodeRepositoryProjectName__"
     },
     "CodeRepositoryName": {
       "type": "parameter",
@@ -71,7 +72,8 @@
       "defaultValue": "",
       "isEnabled": "(CodeRepositoryEngine != \"No repository\")",
       "isRequired": "(CodeRepositoryEngine != \"No repository\")",
-      "replaces": "__CodeRepositoryName__"
+      "replaces": "__CodeRepositoryName__",
+      "fileRename": "__RequiredCodeRepositoryName__"
     }
   },
   "sources": [
@@ -81,6 +83,18 @@
           "condition": "(CodeRepositoryEngine == \"No repository\")",
           "exclude": [
             "docs/workflows/agent-work-item-workflow.md"
+          ]
+        },
+        {
+          "condition": "!(CodeRepositoryEngine == \"Azure DevOps\" && CodeRepositoryProjectName == \"\")",
+          "exclude": [
+            "__RequiredCodeRepositoryProjectName__"
+          ]
+        },
+        {
+          "condition": "!(CodeRepositoryEngine != \"No repository\" && CodeRepositoryName == \"\")",
+          "exclude": [
+            "__RequiredCodeRepositoryName__"
           ]
         }
       ]
