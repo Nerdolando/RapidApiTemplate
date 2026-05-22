@@ -8,6 +8,7 @@
   ],
   "identity": "Nerdolando.RapidApiTemplate",
   "name": "Nerdolando Rapid API",
+  "description": "Creates an ASP.NET Core Web API prepared for rapid development and ready to work with AI agents.",
   "shortName": "rapidapi",
   "sourceName": "RapidApi",
   "defaultName": "WebApi",
