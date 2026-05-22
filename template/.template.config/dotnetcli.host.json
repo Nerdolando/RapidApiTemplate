@@ -4,6 +4,15 @@
     "Framework": {
       "longName": "framework",
       "shortName": "f"
+    },
+    "CodeRepositoryEngine": {
+      "longName": "code-repository"
+    },
+    "CodeRepositoryProjectName": {
+      "longName": "code-repository-project"
+    },
+    "CodeRepositoryName": {
+      "longName": "code-repository-name"
     }
   }
 }
