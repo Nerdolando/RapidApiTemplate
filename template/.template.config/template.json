@@ -15,6 +15,7 @@
   "symbols": {
     "Framework": {
       "type": "parameter",
+      "displayName": "Target framework",
       "description": "The target framework for the project.",
       "datatype": "choice",
       "defaultValue": "net10.0",
@@ -32,6 +33,7 @@
     },
     "CodeRepositoryEngine": {
       "type": "parameter",
+      "displayName": "Code repository engine",
       "description": "The code repository engine to use for the generated project.",
       "datatype": "choice",
       "defaultValue": "No repository",
@@ -53,6 +55,7 @@
     },
     "CodeRepositoryProjectName": {
       "type": "parameter",
+      "displayName": "Repository project name",
       "description": "The code repository project name. Required when Azure DevOps is selected.",
       "datatype": "string",
       "defaultValue": "",
@@ -61,6 +64,7 @@
     },
     "CodeRepositoryName": {
       "type": "parameter",
+      "displayName": "Repository name",
       "description": "The code repository name. Required when Azure DevOps or GitHub is selected.",
       "datatype": "string",
       "defaultValue": "",
