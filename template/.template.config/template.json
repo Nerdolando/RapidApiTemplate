@@ -28,6 +28,43 @@
           "description": ".NET 10.0"
         }
       ]
+    },
+    "CodeRepositoryEngine": {
+      "type": "parameter",
+      "description": "The code repository engine to use for the generated project.",
+      "datatype": "choice",
+      "defaultValue": "No repository",
+      "replaces": "__CodeRepositoryEngine__",
+      "choices": [
+        {
+          "choice": "No repository",
+          "description": "Do not configure a code repository."
+        },
+        {
+          "choice": "Azure DevOps",
+          "description": "Use an Azure DevOps repository."
+        },
+        {
+          "choice": "GitHub",
+          "description": "Use a GitHub repository."
+        }
+      ]
+    },
+    "CodeRepositoryProjectName": {
+      "type": "parameter",
+      "description": "The code repository project name. Required when Azure DevOps is selected.",
+      "datatype": "string",
+      "defaultValue": "",
+      "isRequired": "(CodeRepositoryEngine == \"Azure DevOps\")",
+      "replaces": "__CodeRepositoryProjectName__"
+    },
+    "CodeRepositoryName": {
+      "type": "parameter",
+      "description": "The code repository name. Required when Azure DevOps or GitHub is selected.",
+      "datatype": "string",
+      "defaultValue": "",
+      "isRequired": "(CodeRepositoryEngine != \"No repository\")",
+      "replaces": "__CodeRepositoryName__"
     }
   },
   "tags": {
