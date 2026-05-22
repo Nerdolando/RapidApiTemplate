@@ -67,6 +67,18 @@
       "replaces": "__CodeRepositoryName__"
     }
   },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(CodeRepositoryEngine == \"No repository\")",
+          "exclude": [
+            "docs/workflows/agent-work-item-workflow.md"
+          ]
+        }
+      ]
+    }
+  ],
   "tags": {
     "language": "C#",
     "type": "project"
