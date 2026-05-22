@@ -11,6 +11,25 @@
   "shortName": "rapidapi",
   "sourceName": "RapidApi",
   "defaultName": "WebApi",
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "defaultValue": "net10.0",
+      "replaces": "net10.0",
+      "choices": [
+        {
+          "choice": "net9.0",
+          "description": ".NET 9.0"
+        },
+        {
+          "choice": "net10.0",
+          "description": ".NET 10.0"
+        }
+      ]
+    }
+  },
   "tags": {
     "language": "C#",
     "type": "project"
