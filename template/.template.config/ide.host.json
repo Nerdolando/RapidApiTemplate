@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json.schemastore.org/vs-2017.3.host",
+  "symbolInfo": [
+    {
+      "id": "Framework",
+      "name": {
+        "text": "Target framework"
+      },
+      "isVisible": "true"
+    },
+    {
+      "id": "CodeRepositoryEngine",
+      "name": {
+        "text": "Code repository engine"
+      },
+      "isVisible": "true"
+    },
+    {
+      "id": "CodeRepositoryProjectName",
+      "name": {
+        "text": "Repository project name"
+      },
+      "isVisible": "true"
+    },
+    {
+      "id": "CodeRepositoryName",
+      "name": {
+        "text": "Repository name"
+      },
+      "isVisible": "true"
+    }
+  ]
+}
