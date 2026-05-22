@@ -12,18 +12,17 @@ At the start of GitHub-related work, check whether GitHub MCP tools are availabl
 
 - reading issue, work item, pull request, and repository metadata
 - reading or updating items in the connected `RapidApiTemplateProject`
-- updating the work item board status in the connected `RapidApiTemplateProject`
 - creating or updating pull requests, comments, labels, or issue state
 
 Use local `git` for local repository state and source control operations, including `status`, `diff`, branch creation, commits, and push.
 
 Use GitHub CLI (`gh`) or direct GitHub REST API calls only if GitHub MCP tools are unavailable or fail. If a fallback is used, mention the reason in the user-facing update or final answer.
 
+Do not move work items between GitHub Project board columns or update their board status.
+
 ## Starting Work
 
 When the user provides a work item ID, use that item as the source of scope, title, and branch description.
-
-Before starting implementation for a provided work item ID, move the item in the connected GitHub project board to the `In progress` column.
 
 Before changing files:
 
@@ -94,12 +93,6 @@ The agent should identify:
 - whether the work is a feature, bug fix, refactor, or maintenance task
 
 If project details are not available through GitHub MCP in the current session, use the fallback order from the GitHub Access section. If no tool can retrieve the project details, continue from the user's description and state that limitation.
-
-## Completing Work
-
-When the implementation and local verification for a provided work item ID are complete, move the item in the connected GitHub project board to the `In review` column.
-
-If the project board cannot be updated through GitHub MCP, use the fallback order from the GitHub Access section. If no tool can update the board, state that limitation in the final answer.
 
 ## Implementation
 
