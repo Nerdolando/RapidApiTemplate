@@ -43,7 +43,7 @@ Use the configured GitHub MCP server first for GitHub repository, issue, pull re
 Before using GitHub CLI (`gh`) or direct GitHub REST API calls, check whether GitHub MCP tools are available in the current session. If GitHub MCP tools are available, use them for:
 
 - reading work item, issue, and pull request details
-- reading or updating GitHub Project item fields
+- reading GitHub Project item details
 - creating or updating pull requests, comments, labels, or issue state
 - reading repository metadata that is not already available locally
 
