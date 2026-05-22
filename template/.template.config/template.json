@@ -59,6 +59,7 @@
       "description": "The code repository project name. Required when Azure DevOps is selected.",
       "datatype": "string",
       "defaultValue": "",
+      "isEnabled": "(CodeRepositoryEngine == \"Azure DevOps\")",
       "isRequired": "(CodeRepositoryEngine == \"Azure DevOps\")",
       "replaces": "__CodeRepositoryProjectName__"
     },
@@ -68,6 +69,7 @@
       "description": "The code repository name. Required when Azure DevOps or GitHub is selected.",
       "datatype": "string",
       "defaultValue": "",
+      "isEnabled": "(CodeRepositoryEngine != \"No repository\")",
       "isRequired": "(CodeRepositoryEngine != \"No repository\")",
       "replaces": "__CodeRepositoryName__"
     }
