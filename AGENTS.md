@@ -26,6 +26,16 @@ If the same logical file exists both at the repository root and under `template/
 - root file: instructions for maintaining `RapidApiTemplate`
 - `template/` file: instructions for developers using a project generated from the template
 
+## Work Item Workflow
+
+When the user asks an agent to work on a specific item or start repository work from an item ID, follow:
+
+```text
+docs/workflows/agent-work-item-workflow.md
+```
+
+That workflow defines the GitHub repository context, the connected private project, branch preparation, and branch naming rules.
+
 ## Dotnet New Configuration
 
 The template configuration should live at:
@@ -43,18 +53,17 @@ Agent-related files intended for generated projects should be controlled through
 Current baseline check, before `template.json` exists:
 
 ```powershell
-dotnet build .\template\src\RapidApi\RapidApi.csproj
+dotnet build .\template\RapidApi\RapidApi.csproj
 ```
 
 Once `template/.template.config/template.json` exists, verify template installation and output with a temporary directory:
 
 ```powershell
 dotnet new install .\template
-dotnet new <shortName> -o .\.tmp\generated
-dotnet build .\.tmp\generated
+dotnet new rapidapi -o .\.tmp\generated -n SampleApi
+dotnet build .\.tmp\generated\SampleApi\SampleApi.csproj
+dotnet new uninstall .\template
 ```
-
-Replace `<shortName>` with the `shortName` configured in `template.json`.
 
 Do not commit generated temporary output. Prefer `.tmp/` or another ignored temporary directory for local verification.
 
@@ -65,4 +74,3 @@ Do not commit generated temporary output. Prefer `.tmp/` or another ignored temp
 - Prefer simple, idiomatic ASP.NET Core code over speculative abstractions.
 - Preserve `Nullable` and `ImplicitUsings` conventions unless there is a deliberate template-level reason to change them.
 - When adding generated-project docs or agent instructions, write them for the developer who will consume the generated API project, not for the maintainer of this template repository.
-

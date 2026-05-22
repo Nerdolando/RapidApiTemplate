@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Nerdolando",
+  "classifications": [
+    "Web",
+    "Web API",
+    "ASP.NET Core"
+  ],
+  "identity": "Nerdolando.RapidApiTemplate",
+  "name": "Nerdolando Rapid API",
+  "shortName": "rapidapi",
+  "sourceName": "RapidApi",
+  "defaultName": "WebApi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
